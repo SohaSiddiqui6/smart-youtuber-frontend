@@ -1,9 +1,10 @@
 import React from "react";
 import routes from "../../routes/sidebar";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink, Route, withRouter } from "react-router-dom";
 import * as Icons from "../../icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
+
 import { useAuthentication } from "../../Authentication";
 
 function Icon({ icon, ...props }) {
@@ -11,8 +12,10 @@ function Icon({ icon, ...props }) {
   return <Icon {...props} />;
 }
 
-function SidebarContent() {
-  const { signOut } = useAuthentication();
+function SidebarContent({ history }) {
+  const signOut = () => {
+    history.push("/login");
+  };
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
       <a
@@ -59,4 +62,4 @@ function SidebarContent() {
   );
 }
 
-export default SidebarContent;
+export default withRouter(SidebarContent);

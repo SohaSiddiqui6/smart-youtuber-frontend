@@ -6,8 +6,7 @@ import { ReactComponent as SvgDecoratorBlob1 } from "../../assets/images/svg-dec
 import DesignIllustration from "../../assets/images/design-illustration-2.svg";
 import { PrimaryButton } from "../misc/Buttons";
 import SmartYoutuberHeader from "../headers/SmartYoutuberHeader";
-import { useAuthentication } from "../../Authentication";
-import { googleProvider } from "../../Authentication/infra/authMethod";
+
 import { AuthContext } from "../../Authentication/state/Auth";
 import { Redirect } from "react-router-dom";
 
@@ -22,9 +21,7 @@ const Paragraph = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
 const IllustrationContainer = tw.div`flex justify-center lg:justify-end items-center`;
 
 const LandingPage: React.FC<any> = ({ history }) => {
-  const { signIn } = useAuthentication(googleProvider);
   const authenticate = async () => {
-    await signIn();
     history.push("/app");
   };
 

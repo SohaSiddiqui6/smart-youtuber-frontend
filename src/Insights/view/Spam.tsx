@@ -8,7 +8,7 @@ import { useSpam } from "../infra/useSpam";
 import { Loader } from "../../components/Loader";
 
 const Spam: React.FC<{}> = () => {
-  const { spam, isLoading } = useSpam();
+  // const { spam, isLoading } = useSpam();
 
   const TextCell = (text: string | number) => (
     <TableCell className="max-w-xl">
@@ -19,45 +19,60 @@ const Spam: React.FC<{}> = () => {
   );
   return (
     <>
-      <PageTitle>Spam</PageTitle>
-      <Loader isLoading={isLoading}>
+      <PageTitle>Video Call Logs</PageTitle>
+      <Loader isLoading={false}>
         <DataTable
-          data={spam}
+          data={[
+            {
+              id: 1,
+              name: "Soha",
+              timestamp: new Date().toDateString(),
+              rating: 4,
+              price: 5,
+            },
+            {
+              id: 1,
+              name: "Soha",
+              timestamp: new Date().toDateString(),
+              rating: 4,
+              price: 5,
+            },
+            {
+              id: 1,
+              name: "Soha",
+              timestamp: new Date().toDateString(),
+              rating: 4,
+              price: 5,
+            },
+            {
+              id: 1,
+              name: "Soha",
+              timestamp: new Date().toDateString(),
+              rating: 4,
+              price: 5,
+            },
+          ]}
           config={{
             columns: [
               {
-                columnLabel: "Username",
-                render: (comment) => (
-                  <TableCell>
-                    <AvatarWithName
-                      name="dayemsiddiqui"
-                      ImageIcon={ChannelIcon}
-                    />
-                  </TableCell>
-                ),
+                columnLabel: "ID",
+                render: (row) => TextCell(row.id),
               },
               {
-                columnLabel: "Comment",
-                render: (comment) => TextCell(comment.text),
+                columnLabel: "High Schloor Name",
+                render: (row) => TextCell(row.name),
               },
               {
-                columnLabel: "Likes",
-                render: (comment) => TextCell(comment.likes),
+                columnLabel: "Duration",
+                render: (row) => TextCell(row.timestamp),
               },
               {
-                columnLabel: "Dislikes",
-                render: (comment) => TextCell(comment.dislikes),
+                columnLabel: "Rating",
+                render: (row) => TextCell(row.rating),
               },
-
               {
-                columnLabel: "Actions",
-                render: () => (
-                  <TableCell className="flex flex-row gap-2">
-                    <Button size="small">Detailed View </Button>
-                    <Button size="small">Delete </Button>
-                    <Button size="small"> Not Spam </Button>
-                  </TableCell>
-                ),
+                columnLabel: "Price",
+                render: (row) => TextCell(row.price),
               },
             ],
           }}

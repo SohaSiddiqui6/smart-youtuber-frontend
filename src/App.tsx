@@ -23,7 +23,9 @@ function App() {
         <Router>
           <AccessibleNavigationAnnouncer />
           <Switch>
-            <PrivateRoute path="/app" component={Layout} />
+            {/*<PrivateRoute path="/app" component={Layout} />*/}
+            <Route path="/app" component={Layout} />
+            <Route path="/login" component={Login} />
             <Route path="/" component={LandingPage} />
           </Switch>
         </Router>

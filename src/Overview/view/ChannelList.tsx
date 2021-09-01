@@ -7,12 +7,16 @@ import { useChannels } from "../infra/useChannels";
 import { Loader } from "../../components/Loader";
 
 export const ChannelList: React.FC<{}> = () => {
-  const { channels, isLoading } = useChannels();
-  console.log({ channels, isLoading });
   return (
-    <Loader isLoading={isLoading}>
+    <Loader isLoading={false}>
       <DataTable
-        data={channels}
+        data={[
+          {
+            name: "dsad",
+            totalSubscribers: 12,
+            totalVideos: 231,
+          },
+        ]}
         config={{
           columns: [
             {

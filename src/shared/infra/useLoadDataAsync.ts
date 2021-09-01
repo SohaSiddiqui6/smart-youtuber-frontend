@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AxiosPromise } from "axios";
-import { auth } from "../../Authentication";
+// import { auth } from "../../Authentication";
 
 export const useLoadDataAsync = <T>(
   fetchData: (options?: any) => AxiosPromise<T>,
@@ -11,7 +11,8 @@ export const useLoadDataAsync = <T>(
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     async function handleDataFetchAsync() {
-      const idToken = await auth().currentUser?.getIdToken(true);
+      // const idToken = await auth().currentUser?.getIdToken(true);
+      const idToken = null;
       const response = await fetchData({
         headers: {
           "x-id-token": idToken,

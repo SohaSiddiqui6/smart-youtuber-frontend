@@ -1,13 +1,8 @@
 import React from "react";
-import { OverviewPage, ConnectYoutubeAccount } from "../index";
-import { useConnected } from "../infra/useConnected";
+import { OverviewPage } from "../index";
 
 const Dashboard: React.FC<{}> = () => {
-  const { isConnected } = useConnected();
-  if (isConnected) {
-    return <OverviewPage />;
-  }
-  return <ConnectYoutubeAccount />;
+  return <OverviewPage />;
 };
 
 export default Dashboard;

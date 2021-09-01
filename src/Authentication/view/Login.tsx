@@ -5,20 +5,12 @@ import ImageLight from "../../assets/img/login-office.jpeg";
 import ImageDark from "../../assets/img/login-office-dark.jpeg";
 import { GithubIcon, TwitterIcon } from "../../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
-import { googleProvider } from "../infra/authMethod";
-import { useAuthentication } from "../infra/useAuthentication";
 
 const Login: React.FC<any> = ({ history }) => {
-  const { signIn } = useAuthentication(googleProvider);
   const authenticate = async () => {
-    await signIn();
-    history.push("/app");
+    history.push("/app/dashboard");
   };
 
-  const { currentUser } = useContext(AuthContext);
-  if (currentUser) {
-    return <Redirect to="/app" />;
-  }
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
       <div className="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
