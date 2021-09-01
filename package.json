@@ -107,7 +107,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "npm run build; surge --project ./build --domain dayem-unigow-sandbox.surge.sh"
+      "pre-push": "npm run build; surge --project ./build --domain unigow-sandbox.surge.sh"
     }
   }
 }
