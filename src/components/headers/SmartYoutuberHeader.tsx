@@ -66,7 +66,7 @@ const SmartYoutuberHeader: React.FC<any> = ({ logoLink, links, className }) => {
 
   const defaultLogoLink = (
     <LogoLink tw="text-purple-700" href="/">
-      Unigow Platform Sandbox
+      Unigow Platform 
     </LogoLink>
   );
 

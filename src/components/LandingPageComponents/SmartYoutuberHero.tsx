@@ -40,8 +40,10 @@ const LandingPage: React.FC<any> = ({ history }) => {
               <span className="text-purple-700">Youtube</span> videos.
             </Heading>
             <Paragraph>
-              Use smart youtuber to automatically remove spam comments from your
-              youtube videos using Machine Learning and AI.
+              Unigow is a platform that helps second year high school students
+              find their ideal career. For this, we have created a great
+              community of help between university students and high school
+              students.
             </Paragraph>
             <PrimaryButton onClick={authenticate}>
               Login With Google

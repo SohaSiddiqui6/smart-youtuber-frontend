@@ -22,7 +22,7 @@ function SidebarContent({ history }) {
         className="ml-6 text-lg font-bold text-purple-700 dark:text-white"
         href="#"
       >
-        Smart Youtuber
+        Unigow Platform
       </a>
       <ul className="mt-6">
         {routes.map((route) =>
