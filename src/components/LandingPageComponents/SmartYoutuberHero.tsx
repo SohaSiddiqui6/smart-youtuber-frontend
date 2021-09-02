@@ -36,8 +36,8 @@ const LandingPage: React.FC<any> = ({ history }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              Remove <span className="text-purple-700">spam</span> from{" "}
-              <span className="text-purple-700">Youtube</span> videos.
+              Where <span className="text-purple-700">highschool</span> and{" "}
+              <span className="text-purple-700">College</span> comes together.
             </Heading>
             <Paragraph>
               Unigow is a platform that helps second year high school students
